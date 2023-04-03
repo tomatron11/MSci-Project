@@ -1,0 +1,1 @@
+seq(seq(seq(seq(seq(seq(seq(seq(seq(assign(b, 2), subClass(Car, Vehicle, 4, 4)), subClass(Van, Vehicle, 4, 2)), subClass(Lorry, Vehicle, 8, 2)), object(BlueFordFocus, Car, Ford_Focus, blue)), printToFile(BlueFordFocus)), object(WhiteTransit, Van, Transit, white)), printToFile(WhiteTransit)), object(RedLorry, Lorry, Red_Lorry, red)), printToFile(RedLorry))

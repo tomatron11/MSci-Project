@@ -1,0 +1,8 @@
+subClass walls = Cuboid(Colour, Blue)
+4 objects: [wall] = walls(100,10,100)
+wall2.rotate(90,Z)
+wall2.translate(50,50,0)
+wall3.translate(0,100,0)
+wall4.rotate(90,Z)
+wall4.translate(-50,50,0)
+

@@ -1,0 +1,40 @@
+statement ::= seq^^ | assign^^ | class^^
+
+prelude {
+  import java.util.HashMap;
+}
+
+support {
+  HashMap<String, Integer> variables = new HashMap<String, Integer>();
+  int handle = 0;
+}
+ 
+seq ::= statement statement
+assign ::= ID '='^ subExpr
+backend ::= 'backend'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+
+subExpr ::= operand^^ 
+
+operand ::= deref^^ | INTEGER^^ | '('^ subExpr^^ ')'^ 
+deref ::= ID
+
+class ::= subClass^^ | object^^ | printToFile^^
+subClass ::= 'subClass'^ ID '='^ ID '('^ subExpr ','^ subExpr ')'^
+object ::= 'object'^ ID '='^ ID '('^ '"'^ ID '"'^ ','^ '"'^ ID '"'^ ')'^
+printToFile ::= ID '.printToFile'^ 
+
+thisName<v:String> ::=
+  ID^^ { variables.put(ID1.v, handle); handle++; }
+
+thisHandle<v:String> ::=
+  ID^^ { thisHandle.v = variables.get(ID1.v).toString(); }
+| INTEGER { thisHandle.v = String.valueOf(INTEGER1.v); }
+
+(* lexical items below this line *)
+ID <leftExtent:int rightExtent:int lexeme:String v:String> ::= 
+  &ID^^ { ID.lexeme = artLexeme(ID.leftExtent, ID.rightExtent); 
+  ID.v = artLexemeAsID(ID.leftExtent, ID.rightExtent); }  
+
+INTEGER <leftExtent:int rightExtent:int lexeme:String v:int> ::= 
+  &INTEGER^^ { INTEGER.lexeme = artLexeme(INTEGER.leftExtent, INTEGER.rightExtent); 
+  INTEGER.v = artLexemeAsInteger(INTEGER.leftExtent, INTEGER.rightExtent); } 

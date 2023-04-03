@@ -1,0 +1,56 @@
+UKCAD Signatures
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+shapes ::= 
+
+_ID = cuboid(_x:__real64, _y:__real64, _z:__real64) - evaluates _x,_y,_z to __real64 values, draws cuboid with _ID ID, width _x, height _y and depth _z
+
+_ID = cylinder(_r:__real64, _y:__real64) - evaluates _r and _y to __real64 values, draws cylinder with _ID ID, radius _r and height _y 
+
+_ID = sphere(_r:__real64) - evaluates _r to __real64 value, draws sphere with _ID ID, radius _r
+
+_ID = pyramid(_x:__real64, _y:__real64, _z:__real64) - evaluates _x,_y,_z to __real64 values, draws 4-sized pyramid with _ID ID, width _x, height _y and depth _z
+
+_ID = triprism(_x:__real64, _y:__real64, _z:__real64) - evaluates _x,_y,_z to __real64 values, draws triangular prism with _ID ID, width _x, height _y and depth _z
+
+_ID = cone(_r:__real64, _y:__real64) - evaluates _r and _y to __real64 values, draws cone with _ID ID, radius _r and height _y
+
+_ID = tetra(_x:__real64, _y:__real64, _z:__real64) - evaluates _x,_y,_z to __real64 values, draws tetrahedron with _ID ID, width _x, height _y and depth _z
+
+_ID = trapprism(_bx:__real64, _tx:__real64, _y:__real64, _z:__real64) - evaluates _x,_y,_z to __real64 values, draws tetrahedron with _ID ID, bottom width _bx, top width _tx, height _y and depth _z
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+transforms ::=
+
+_ID.translate(_x:__real64, _y:__real64, _z:__real64) - translates shape _ID along vector (_x,_y,_z)
+
+_ID.rotate(_angle:__real64, _axis:__string) - rotates shape _ID by _angle on _axis around centre point of shape
+
+_ID.scale(_val:__real64) - scales shape _ID by _val
+
+_ID.colour(_colour:__string) - sets shape _ID's material to colour _colour
+
+_ID.isFilled(_boolean:__bool) - fills or unfills shape _ID depending on _boolean
+
+_ID.texture("_link":__string) - fills shape _ID's material with image that _link points to, _link is surrounded by ""
+
+_ID.opacity(_val:__real64) - sets shape _ID opacity on a scale between 0 and 1
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+classes ::=
+
+subClass _ID1 = _ID2() - creates a subclass called _ID1 from existing shape _ID2 with no transform, existing shape _ID2 must be capitalised (e.g. sphere -> Sphere)
+
+subClass _ID1 = _ID2(_transform:__string, args...) - creates a subclass called _ID1 from existing shape _ID2 with transform _transform, has a variable number and type of args depending on transform,
+existing shape _ID2 and _transform must be capitalised (e.g. sphere -> Sphere, colour -> Colour), args are seperated by commas
+
+_ID1.addTransform(_transform:__string, args...) - adds _transform transform to subclass _ID1, has a variable number and type of args depending on transform, 
+_transform must be capitalised (e.g. isFilled -> IsFilled), args are seperated by commas
+
+object _ID1 = _ID2(args...) - creates object called _ID1 from subclass _ID2 with variable number of args, depending on which shape _ID2 inherits from, args are seperated by commas
+
+_n objects: [_ID1] = _ID2(args...) - creates set of _n objects, each called _ID1 + 1..._n with variable number of args, depending on which shape _ID2 inherits from, args are seperated by commas
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+setTransforms ::=
+
+[_ID].translateAll(_x:__real64, _sx:__real64, _y:__real64, _sy:__real64, _z:__real64, _sz:__real64) - translates each shape in set [_ID], starting from _x,_y,_z for _ID1 and adding _sx,_sy,_sz for each shape
+
+[_ID].rotateAll(_a:__real64, _sa:__real64, _axis:__string) - rotates each shape in set [_ID], starting at _a angle on _axis axis, and adding _sa for each shape
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

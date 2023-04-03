@@ -1,0 +1,22 @@
+UKCAD Controls
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Editor 
+- Open File opens .str program file to the editor code area
+- Export File will save the program file to a chosen location, whilst keeping that file open
+- Save & Run will save the opened program to the opened location and run the program in a new instance of UKCAD
+- Fullscreen will enlarge the 3D scene to the monitor size, Esc can be used to return 
+- The editor will display the currently opened program file
+- Buttons to view the documentation are present for ease of use
+- A program file does not need to be opened to write and run programs 
+- Programs can be written in the code area
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Camera 
+- Camera is controled using the WASDQE keys, with W,S keys changing the x value, A,D changing the y value and Q,E changing the z value of the camera
+- Camera can be zoomed in and out using the mouse's scroll wheel
+- Camera can be returned to starting angles using the H key, but not starting zoom value
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3D Scene
+- 3D scene can be focused on by clicking anywhere
+- The axes can be toggled using the F key
+- A shape can be clicked on to view its name and coordinates
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

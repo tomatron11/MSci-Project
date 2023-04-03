@@ -1,0 +1,45 @@
+prelude {
+  import java.util.HashMap;
+}
+
+support {
+  HashMap<String, Integer> variables = new HashMap<String, Integer>();
+  ITerms iTerms = new ITermsLowLevelAPI();
+}
+
+statements ::= statement { System.out.println("Variables at end of program: " + variables); }
+| statement statements  
+
+statement ::=
+  ID '=' subExpr { 
+    variables.put(ID1.v, subExpr1.v); 
+  }
+
+| 'subClass' ID '=' ID '(' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v), new __int32(subExpr1.v, 0), new __int32(subExpr2.v, 0), new __string(ID3.v)); }
+
+| 'object' ID '=' ID '(' '"' ID '"' ',' '"' ID '"' ')'
+  { iTerms.valueUserPlugin.user(new __string("object"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v), new __string(ID4.v)); }
+
+| ID '.printToFile'
+  { iTerms.valueUserPlugin.user(new __string("printToFile"), new __string(ID1.v)); }  
+
+| 'backend' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __int32(subExpr1.v, 0), new __int32(subExpr2.v, 0), new __int32(subExpr3.v, 0)); }
+
+subExpr<v:int> ::=
+  operand { subExpr.v = operand1.v; }
+
+operand<v:int> ::=
+  ID { operand.v = variables.get(ID1.v); }
+| INTEGER { operand.v = INTEGER1.v; }
+| '(' subExpr ')' { operand.v = subExpr1.v; }
+
+(* lexical items below this line *)
+ID <leftExtent:int rightExtent:int lexeme:String v:String> ::= 
+  &ID {ID.lexeme = artLexeme(ID.leftExtent, ID.rightExtent); 
+  ID.v = artLexemeAsID(ID.leftExtent, ID.rightExtent); }  
+
+INTEGER <leftExtent:int rightExtent:int lexeme:String v:int> ::= 
+  &INTEGER {INTEGER.lexeme = artLexeme(INTEGER.leftExtent, INTEGER.rightExtent); 
+  INTEGER.v = artLexemeAsInteger(INTEGER.leftExtent, INTEGER.rightExtent); }  

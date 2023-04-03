@@ -1,0 +1,150 @@
+support {
+  ITerms iTerms = new ITermsLowLevelAPI();
+}
+
+statements ::= statement | statement statements  
+
+statement ::= 
+  ID '=' 'sphere' '(' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("sphere"), new __string(ID1.v), new __real64(subExpr1.v)); }
+| ID '=' 'cuboid' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("cuboid"), new __string(ID1.v), new __real64(subExpr1.v), 
+  new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| ID '=' 'cylinder' '(' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("cylinder"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v)); }
+| ID '=' 'pyramid' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("pyramid"), new __string(ID1.v), new __real64(subExpr1.v), 
+  new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| ID '=' 'triprism' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("triprism"), new __string(ID1.v), new __real64(subExpr1.v), 
+  new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| ID '=' 'cone' '(' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("cone"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v)); }
+| ID '=' 'tetra' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("tetra"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v),
+  new __real64(subExpr3.v)); }
+| ID '=' 'trapprism' '(' subExpr ',' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("trapprism"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v),
+  new __real64(subExpr3.v), new __real64(subExpr4.v)); }
+
+| 'subClass' ID '=' ID '(' ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v)); }
+| 'subClass' ID '=' ID '(' ID ',' ID ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v), new __string(ID4.v)); }
+| 'subClass' ID '=' ID '(' ID ',' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v), new __real64(subExpr1.v),
+   new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| 'subClass' ID '=' ID '(' ID ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v), new __real64(subExpr1.v)); }
+| 'subClass' ID '=' ID '(' ID ',' '"' url '"' ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v), new __string(url1.v)); }
+| 'subClass' ID '=' ID '(' ID ',' subExpr ','  ID  ')'
+  { iTerms.valueUserPlugin.user(new __string("subClass"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v), new __real64(subExpr1.v)
+  , new __string(ID4.v)); }
+
+| ID '.addTransform' '(' ID ',' ID ')'
+  { iTerms.valueUserPlugin.user(new __string("addTransform"), new __string(ID1.v), new __string(ID2.v), new __string(ID3.v)); }
+| ID '.addTransform' '(' ID ',' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("addTransform"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v),
+   new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| ID '.addTransform' '(' ID ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("addTransform"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v)); }
+| ID '.addTransform' '(' ID ',' '"' url '"' ')'
+  { iTerms.valueUserPlugin.user(new __string("addTransform"), new __string(ID1.v), new __string(ID2.v), new __string(url1.v)); }
+| ID '.addTransform' '(' ID ',' subExpr ','  ID ')'
+  { iTerms.valueUserPlugin.user(new __string("addTransform"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v)
+  , new __string(ID3.v)); }
+
+| 'object' ID '=' ID '(' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("object"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v)); }
+| 'object' ID '=' ID '(' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("object"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v),
+   new __real64(subExpr2.v)); }
+| 'object' ID '=' ID '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("object"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v),
+   new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| 'object' ID '=' ID '(' subExpr ',' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("object"), new __string(ID1.v), new __string(ID2.v), new __real64(subExpr1.v),
+   new __real64(subExpr2.v), new __real64(subExpr3.v), new __real64(subExpr4.v)); }
+
+| operand 'objects:' '[' ID ']' '=' ID '(' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("objects"), new __int32(operand1.v, 0), new __string(ID1.v), new __string(ID2.v)
+  , new __real64(subExpr1.v)); }
+| operand 'objects:' '[' ID ']' '=' ID '(' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("objects"),  new __int32(operand1.v, 0), new __string(ID1.v), new __string(ID2.v)
+  , new __real64(subExpr1.v), new __real64(subExpr2.v)); }
+| operand 'objects:' '[' ID ']' '=' ID '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("objects"), new __int32(operand1.v, 0), new __string(ID1.v), new __string(ID2.v),
+   new __real64(subExpr1.v), new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+| operand 'objects:' '[' ID ']' '=' ID '(' subExpr ',' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("objects"), new __int32(operand1.v, 0), new __string(ID1.v), new __string(ID2.v),
+   new __real64(subExpr1.v), new __real64(subExpr2.v), new __real64(subExpr3.v), new __real64(subExpr4.v)); }
+
+| ID '.colour' '(' ID ')'
+  { iTerms.valueUserPlugin.user(new __string("colour"), new __string(ID1.v), new __string(ID2.v)); }
+
+| ID '.translate' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("translate"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v),
+   new __real64(subExpr3.v)); }
+
+| '[' ID ']' '.translateAll' '(' subExpr ',' subExpr ',' subExpr ',' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("translateAll"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v),
+   new __real64(subExpr3.v), new __real64(subExpr4.v), new __real64(subExpr5.v), new __real64(subExpr6.v)); }
+
+| ID '.rotate' '(' subExpr ',' ID ')'
+  { iTerms.valueUserPlugin.user(new __string("rotate"), new __string(ID1.v), new __real64(subExpr1.v), new __string(ID2.v)); }
+  
+| '[' ID ']' '.rotateAll' '(' subExpr ',' subExpr ',' ID ')'
+  { iTerms.valueUserPlugin.user(new __string("rotateAll"), new __string(ID1.v), new __real64(subExpr1.v), new __real64(subExpr2.v),
+   new __string(ID2.v)); }
+
+| ID '.scale' '(' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("scale"), new __string(ID1.v), new __real64(subExpr1.v)); }
+
+| ID '.isFilled' '(' ID ')'
+  { iTerms.valueUserPlugin.user(new __string("isFilled"), new __string(ID1.v), new __string(ID2.v)); }
+
+| ID '.texture' '(' '"' url '"' ')'
+  { iTerms.valueUserPlugin.user(new __string("texture"), new __string(ID1.v), new __string(url1.v)); }
+
+| ID '.opacity' '(' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __string("opacity"), new __string(ID1.v), new __real64(subExpr1.v)); }
+
+| 'backend' '(' subExpr ',' subExpr ',' subExpr ')'
+  { iTerms.valueUserPlugin.user(new __real64(subExpr1.v), new __real64(subExpr2.v), new __real64(subExpr3.v)); }
+
+
+subExpr<v:double> ::=
+  REAL { subExpr.v = REAL1.v; }
+| operand { subExpr.v = operand1.v; }
+| '-' subExpr { subExpr.v = 0 - subExpr1.v; }
+
+operand<v:int> ::=
+  INTEGER { operand.v = INTEGER1.v; }
+
+url<v:String> ::=
+  ID { url.v = ID1.v; }
+| url ':' '/' '/' { url.v = url1.v + ':' + '/' + '/'; }
+| url ':' { url.v = url1.v + ':'; }
+| url '/' url { url.v = url1.v + '/' + url2.v; }
+| url '?' { url.v = url1.v + '?'; }
+| url '=' { url.v = url1.v + '='; }
+| url '%' { url.v = url1.v + '%'; }
+| url '-' { url.v = url1.v + '-'; }
+| url '&' { url.v = url1.v + '&'; }
+| url '.' url { url.v = url1.v + '.' + url2.v; }
+| url '_' { url.v = url1.v + '_'; }
+| url INTEGER { url.v = url1.v + INTEGER1.v; }
+
+(* lexical items below this line *)
+ID <leftExtent:int rightExtent:int lexeme:String v:String> ::= 
+  &ID {ID.lexeme = artLexeme(ID.leftExtent, ID.rightExtent); 
+  ID.v = artLexemeAsID(ID.leftExtent, ID.rightExtent); }  
+
+INTEGER <leftExtent:int rightExtent:int lexeme:String v:int> ::= 
+  &INTEGER {INTEGER.lexeme = artLexeme(INTEGER.leftExtent, INTEGER.rightExtent); 
+  INTEGER.v = artLexemeAsInteger(INTEGER.leftExtent, INTEGER.rightExtent); }  
+
+REAL <leftExtent:int rightExtent:int lexeme:String v:double> ::= 
+  &REAL {REAL.lexeme = artLexeme(REAL.leftExtent, REAL.rightExtent); 
+  REAL.v = artLexemeAsReal(REAL.leftExtent, REAL.rightExtent); }  

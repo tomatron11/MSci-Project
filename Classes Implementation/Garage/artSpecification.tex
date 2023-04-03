@@ -1,0 +1,53 @@
+\documentclass[10pt,leqno]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathabx}
+\usepackage[a4paper, total={18cm, 27cm}]{geometry}
+\parindent 0pt
+\newcommand{\artVariable}[1]{\mbox{\em #1\/}}
+\newcommand{\artConstructor}[1]{\mbox{\sf #1}}
+\newcommand{\artCaseSensitiveLiteral}[1]{\mbox{\tt #1}}
+\newcommand{\artCaseInsensitiveLiteral}[1]{\mbox{\tt #1}}
+\newcommand{\artCharacterLiteral}[1]{\mbox{\tt #1}}
+\newcommand{\artSpecial}[1]{\mbox{\sf\em #1}}
+\newcommand{\artCatenation}{\ \ }
+\newcommand{\artType}[1]{: #1}
+\begin{document}
+\begin{equation}
+\tag*{[\artConstructor{\sf backend}]}\frac{}{\langle\, \artConstructor{\sf backend}(\artVariable{P$_{1}$}, \artVariable{P$_{2}$}, \artVariable{P$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artVariable{P$_{1}$}, \artVariable{P$_{2}$}, \artVariable{P$_{3}$})\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf sequenceDone}]}\frac{}{\langle\, \artConstructor{\sf seq}(\artSpecial{done}, \artVariable{C}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artVariable{C}, \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf sequence}]}\frac{\langle\, \artVariable{C$_{1}$}, \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artVariable{C$_{1}$\/$^\prime$}, \artVariable{$\sigma$\/$^\prime$}\,\rangle }{\langle\, \artConstructor{\sf seq}(\artVariable{C$_{1}$}, \artVariable{C$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artConstructor{\sf seq}(\artVariable{C$_{1}$\/$^\prime$}, \artVariable{C$_{2}$}), \artVariable{$\sigma$\/$^\prime$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf variable}]}\frac{ \artSpecial{get}(\artVariable{$\sigma$}, \artVariable{R})\triangleright \artVariable{Z} }{\langle\, \artConstructor{\sf deref}(\artVariable{R}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artVariable{Z}, \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf subClass}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{h}, \artVariable{c}, \artVariable{w}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{h}, \artVariable{c}, \artVariable{w}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf assign}]}\frac{ \artVariable{n}\triangleright \artSpecial{int32}(\_) }{\langle\, \artConstructor{\sf assign}(\artVariable{X}, \artVariable{n}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{done}, \artSpecial{put}(\artVariable{$\sigma$}, \artVariable{X}, \artVariable{n})\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf assignResolve}]}\frac{\langle\, \artVariable{E}, \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artVariable{I}, \artVariable{$\sigma$\/$^\prime$}\,\rangle }{\langle\, \artConstructor{\sf assign}(\artVariable{X}, \artVariable{E}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artConstructor{\sf assign}(\artVariable{X}, \artVariable{I}), \artVariable{$\sigma$\/$^\prime$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf object}]}\frac{}{\langle\, \artConstructor{\sf object}(\artVariable{h}, \artVariable{c}, \artVariable{nm}, \artVariable{co}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{object}), \artVariable{h}, \artVariable{c}, \artVariable{nm}, \artVariable{co}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf printToFile}]}\frac{}{\langle\, \artConstructor{\sf printToFile}(\artVariable{h}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{printToFile}), \artVariable{h}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\hrule
+\end{document}

@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "C:/Program Files/JavaFX/javafx-sdk-17.0.2/lib/*.jar",
+        "C:/Users/tomwi/Documents/Final Year Project/PROJECT/UKCAD/src/art.jar",
+        "C:/Program Files/Javassist/jboss-javassist-javassist-700be6f/javassist.jar",
+        "test-lib\\**\\*.jar"
+    ]
+}

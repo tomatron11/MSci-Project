@@ -1,0 +1,203 @@
+-sequenceDone
+---
+seq(__done, _C), _sig -> _C, _sig
+
+-sequence 
+_C1, _sig -> _C1P, _sigP
+---
+seq(_C1, _C2), _sig -> seq(_C1P, _C2), _sigP
+
+-sphere
+---
+sphere(_ID,_d),_sig -> __user("sphere",_ID,_d), _sig
+
+-cuboid
+---
+cuboid(_ID,_w,_h,_d),_sig -> __user("cuboid",_ID,_w,_h,_d), _sig
+
+-cylinder
+---
+cylinder(_ID,_d,_h),_sig -> __user("cylinder",_ID,_d,_h), _sig
+
+-pyramid
+---
+pyramid(_ID,_w,_h,_d),_sig -> __user("pyramid",_ID,_w,_h,_d), _sig
+
+-triprism
+---
+triprism(_ID,_w,_h,_d),_sig -> __user("triprism",_ID,_w,_h,_d), _sig
+
+-trapprism
+---
+trapprism(_ID,_tw,_bw,_h,_d),_sig -> __user("triprism",_ID,_tw,_bw,_h,_d), _sig
+
+-cone
+---
+cone(_ID,_d,_h),_sig -> __user("cone",_ID,_d,_h), _sig
+
+-tetra
+---
+tetra(_ID,_w,_h,_d),_sig -> __user("tetra",_ID,_w,_h,_d), _sig
+
+-subClass
+---
+subClass(_ID1,_ID2),_sig -> __user("subClass",_ID1,_ID2), _sig
+
+-subClass
+---
+subClass(_ID1,_ID2,_a1,neg(_a2)),_sig -> __user("subClass",_ID1,_ID2,_a1,__sub(0,_a2)), _sig
+---
+subClass(_ID1,_ID2,_a1,_a2),_sig -> __user("subClass",_ID1,_ID2,_a1,_a2), _sig
+
+-subClass
+---
+subClass(_ID1,_ID2,_a1,neg(_a2),_a3),_sig -> __user("subClass",_ID1,_ID2,_a1,__sub(0,_a2),_a3), _sig
+---
+subClass(_ID1,_ID2,_a1,_a2,_a3),_sig -> __user("subClass",_ID1,_ID2,_a1,_a2,_a3), _sig
+
+-subClass
+---
+subClass(_ID1,_ID2,_a1,neg(_a2),neg(_a3),neg(_a4)),_sig -> __user("subClass", _ID1,_ID2,_a1,__sub(0,_a2),__sub(0,_a3),__sub(0,_a4)), _sig
+---
+subClass(_ID1,_ID2,_a1,neg(_a2),_a3,neg(_a4)),_sig -> __user("subClass", _ID1,_ID2,_a1,__sub(0,_a2),_a3,__sub(0,_a4)), _sig
+---
+subClass(_ID1,_ID2,_a1,_a2,neg(_a3),neg(_a4)),_sig -> __user("subClass", _ID1,_ID2,_a1,_a2,__sub(0,_a3),__sub(0,_a4)), _sig
+---
+subClass(_ID1,_ID2,_a1,neg(_a2),neg(_a3),_a4),_sig -> __user("subClass", _ID1,_ID2,_a1,__sub(0,_a2),__sub(0,_a3),_a4), _sig
+---
+subClass(_ID1,_ID2,_a1,neg(_a2),_a3,_a4),_sig -> __user("subClass", _ID1,_ID2,_a1,__sub(0,_a2),_a3,_a4), _sig
+---
+subClass(_ID1,_ID2,_a1,_a2,neg(_a3),_a4),_sig -> __user("subClass", _ID1,_ID2,_a1,_a2,__sub(0,_a3),_a4), _sig
+---
+subClass(_ID1,_ID2,_a1,_a2,_a3,neg(_a4)),_sig -> __user("subClass", _ID1,_ID2,_a1,_a2,_a3,__sub(0,_a4)), _sig
+---
+subClass(_ID1,_ID2,_a1,_a2,_a3,_a4),_sig -> __user("subClass", _ID1,_ID2,_a1,_a2,_a3,_a4), _sig
+
+-addTransform
+---
+addTransform(_ID,_a1,neg(_a2)),_sig -> __user("addTransform",_ID,_a1,__sub(0,_a2)), _sig
+---
+addTransform(_ID,_a1,_a2),_sig -> __user("addTransform",_ID,_a1,_a2), _sig
+
+-addTransform
+---
+addTransform(_ID,_a1,neg(_a2),_a3),_sig -> __user("addTransform",_ID,_a1,__sub(0,_a2),_a3), _sig
+---
+addTransform(_ID,_a1,_a2,_a3),_sig -> __user("addTransform",_ID,_a1,_a2,_a3), _sig
+
+-addTransform
+---
+addTransform(_ID,_a1,neg(_a2),neg(_a3),neg(_a4)),_sig -> __user("addTransform", _ID,_a1,__sub(0,_a2),__sub(0,_a3),__sub(0,_a4)), _sig
+---
+addTransform(_ID,_a1,neg(_a2),_a3,neg(_a4)),_sig -> __user("addTransform", _ID,_a1,__sub(0,_a2),_a3,__sub(0,_a4)), _sig
+---
+addTransform(_ID,_a1,_a2,neg(_a3),neg(_a4)),_sig -> __user("addTransform", _ID,_a1,_a2,__sub(0,_a3),__sub(0,_a4)), _sig
+---
+addTransform(_ID,_a1,neg(_a2),neg(_a3),_a4),_sig -> __user("addTransform", _ID,_a1,__sub(0,_a2),__sub(0,_a3),_a4), _sig
+---
+addTransform(_ID,_a1,neg(_a2),_a3,_a4),_sig -> __user("addTransform", _ID,_a1,__sub(0,_a2),_a3,_a4), _sig
+---
+addTransform(_ID,_a1,_a2,neg(_a3),_a4),_sig -> __user("addTransform", _ID,_a1,_a2,__sub(0,_a3),_a4), _sig
+---
+addTransform(_ID,_a1,_a2,_a3,neg(_a4)),_sig -> __user("addTransform", _ID,_a1,_a2,_a3,__sub(0,_a4)), _sig
+---
+addTransform(_ID,_a1,_a2,_a3,_a4),_sig -> __user("addTransform",_ID,_a1,_a2,_a3,_a4), _sig
+
+-object
+---
+object(_ID1,_ID2,_a1),_sig -> __user("object",_ID1,_ID2,_a1), _sig
+
+-object
+---
+object(_ID1,_ID2,_a1,_a2),_sig -> __user("object",_ID1,_ID2,_a1,_a2), _sig
+
+-object
+---
+object(_ID1,_ID2,_a1,_a2,_a3),_sig -> __user("object",_ID1,_ID2,_a1,_a2,_a3), _sig
+
+-object
+---
+object(_ID1,_ID2,_a1,_a2,_a3,_a4),_sig -> __user("object",_ID1,_ID2,_a1,_a2,_a3,_a4), _sig
+
+-objects
+---
+objects(_n,_ID1,_ID2,_a1),_sig -> __user("objects",_n,_ID1,_ID2,_a1), _sig
+
+-objects
+---
+objects(_n,_ID1,_ID2,_a1,_a2),_sig -> __user("objects",_n,_ID1,_ID2,_a1,_a2), _sig
+
+-objects
+---
+objects(_n,_ID1,_ID2,_a1,_a2,_a3),_sig -> __user("objects",_n,_ID1,_ID2,_a1,_a2,_a3), _sig
+
+-objects
+---
+objects(_n,_ID1,_ID2,_a1,_a2,_a3,_a4),_sig -> __user("objects",_n,_ID1,_ID2,_a1,_a2,_a3,_a4), _sig
+
+-colour
+---
+colour(_s,_c),_sig -> __user("colour",_s,_c), _sig
+
+-translate
+---
+translate(_a1,neg(_a2),neg(_a3),neg(_a4)),_sig -> __user("translate", _a1,__sub(0,_a2),__sub(0,_a3),__sub(0,_a4)), _sig
+---
+translate(_a1,neg(_a2),_a3,neg(_a4)),_sig -> __user("translate", _a1,__sub(0,_a2),_a3,__sub(0,_a4)), _sig
+---
+translate(_a1,_a2,neg(_a3),neg(_a4)),_sig -> __user("translate", _a1,_a2,__sub(0,_a3),__sub(0,_a4)), _sig
+---
+translate(_a1,neg(_a2),neg(_a3),_a4),_sig -> __user("translate", _a1,__sub(0,_a2),__sub(0,_a3),_a4), _sig
+---
+translate(_a1,neg(_a2),_a3,_a4),_sig -> __user("translate", _a1,__sub(0,_a2),_a3,_a4), _sig
+---
+translate(_a1,_a2,neg(_a3),_a4),_sig -> __user("translate", _a1,_a2,__sub(0,_a3),_a4), _sig
+---
+translate(_a1,_a2,_a3,neg(_a4)),_sig -> __user("translate", _a1,_a2,_a3,__sub(0,_a4)), _sig
+---
+translate(_s,_x,_y,_z),_sig -> __user("translate",_s,_x,_y,_z), _sig
+
+-translateAll
+---
+translateAll(_g,neg(_x),_sx,_y,_sy,_z,_sz),_sig -> __user("translateAll",_g,__sub(0,_x),_sx,_y,_sy,_z,_sz),_sig
+---
+translateAll(_g,_x,_sx,_y,_sy,_z,_sz),_sig -> __user("translateAll",_g,_x,_sx,_y,_sy,_z,_sz),_sig
+
+-rotate
+---
+rotate(_s,neg(_a),_ax),_sig -> __user("rotate",_s,__sub(0,_a),_ax), _sig
+---
+rotate(_s,_a,_ax),_sig -> __user("rotate",_s,_a,_ax), _sig
+
+-rotateAll
+---
+rotateAll(_g,neg(_r),_sr,_a),_sig -> __user("rotateAll",_g,__sub(_r),_sr,_a)
+---
+rotateAll(_g,_r,neg(_sr),_a),_sig -> __user("rotateAll",_g,_r,__sub(_sr),_a)
+---
+rotateAll(_g,neg(_r),neg(_sr),_a),_sig -> __user("rotateAll",_g,__sub(_r),__sub(_sr),_a)
+---
+rotateAll(_g,_r,_sr,_a),_sig -> __user("rotateAll",_g,_r,_sr,_a)
+
+-scale
+---
+scale(_s,neg(_v)),_sig -> __user("scale",_s,__sub(0,_v)), _sig
+---
+scale(_s,_v),_sig -> __user("scale",_s,_v), _sig
+
+-isFilled
+---
+isFilled(_s,_b),_sig -> __user("isFilled",_s,_b), _sig
+
+-texture
+---
+texture(_s,_l),_sig -> __user("texture",_s,_l), _sig
+
+-opacity
+---
+opacity(_s,_v),_sig -> __user("opacity",_s,_v), _sig
+
+-backend
+---
+backend(_P1,_P2,_P3),_sig -> __user(_P1,_P2,_P3), _sig!try seq(seq(seq(seq(seq(seq(subClass(walls, Cuboid, Colour, Blue), objects(4, wall, walls, 100, 10, 100)), rotate(wall2, 90, Z)), translate(wall2, 50, 50, 0)), translate(wall3, 0, 100, 0)), rotate(wall4, 90, Z)), translate(wall4, neg(50), 50, 0))
+, __map

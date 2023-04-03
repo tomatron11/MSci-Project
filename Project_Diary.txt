@@ -1,0 +1,455 @@
+07/10/2022
+I downloaded and installed Pharo, and used a tutorial to have a look around the Pharo IDE and 
+to start to get familiar with how it works. I created a Hello World class with a Hello World 
+method, as well as checking out and checking the file back in. I also used the transcript. 
+
+10/10/2022
+I used the Pharo By Example book to produce a program, a game called Lights Out, which helped me
+to begin to familiarise myself with how Pharo and Smalltalk work. During the creation of this
+game I created classes and methods, as well as handled mouse events and produced a graphical
+window. 
+
+12/10/2022
+Planned out my first proof-of-concept program, the customer ordering system. Created the Entity
+and Customer objects, and added getters and setters for all fields, as well as testing they 
+work in the Pharo playground. 
+
+13/10/2022
+I added the Product class with the fields Name, Product_id and the OrderedCollection Retailers 
+that it is sold from. I changed the orders array to an OrderedCollection as this is a 
+dynamically-sized array compared to the static-sized array that I was previously using. I also
+added the ability for ids to automatically increment and be assigned once the object is created,
+so that the user does not have to manually enter ids for each object. I also added SUnit test
+classes for each method I have written so far and I will test each feature as it is added. 
+
+14/10/2022
+I added the Order class with fields Address, Order_id, Product_id, Retailer_id and DateTime. 
+I also added getters and setters for each field. DateTime was initialised to take the 
+current date and time to add to an order. I also added the OrderingSystem class which will
+provide methods to add and remove Customers, Retailers, Orders and Products. OrderingSystem 
+contains arrays for each object so I can call back to previously created objects using the id.
+I also added tests for the Order class and tests for the methods created so far in the 
+OrderingSystem class. Finally, I added a toString method to the Customer and OrderingSystem
+classes. 
+
+18/10/2022
+I added toString methods to the Retailer, Product and Order classes. I also expanded the
+OrderingSystem class to allow for the adding of Retailers, Products and Orders. The addProduct
+method adds the id of the product automatically to the field Products for the corresponding 
+Retailer and the addOrder method adds the order_id to the corresponding Customer who placed 
+the order. Finally, I added methods to remove Retailer, Product and Order objects. 
+
+20/10/2022
+While testing the OrderingSystem class, I found a bug where the instances of the Entity class
+would save into the respective OrderedSelection via overwriting the previous entry, so that 
+the number of objects was correct but it would output the last instance created that number of
+times. I also found a bug where the remove methods would not correctly remove the selected item.
+
+21/10/2022
+I fixed the repeated entry bug via changing the variables of the Customer, Retailer, Entity,
+Product, Order and OrderingSystem to instance-based rather than class-based, as the values 
+entered would overwrite the previous instance of that class while they were class-based. I also
+fixed the remove bug via creating an item variable so that it was not performing operations
+on the list while iterating through it, and by using = rather than == for checking equality. 
+I also changed the id generation process for every class by using the size of the respective
+OrderedSelection as the id, as this will increment each time an object is added, rather than
+each time a new instance is created so that ids will always start from 0. 
+
+22/10/2022
+I changed the addOrder method and the Order class so that it now takes the id of the Customer,
+Retailer and Product, and then checks if the retailer, product and customer exist, and if the
+retailer sells that product; adding transcript prints for error cases. I also fixed the 
+DateTime to be in a form that can be outputted correctly. The address of the order now is 
+fetched and set automatically from the respective customer, if it exists. 
+
+25/10/2022
+I updated the methods for removing customers, orders, products and retailers to also remove the
+references in arrays held by instances of those classes. For example, when an order object is 
+removed, it will also remove the reference to it in the relevant customer's orders array. I 
+also added labels into the various toString methods so that it is more obvious what each piece
+of information that is returned is. 
+
+26/10/2022
+I started work on the reflective window program, making a new class called Window that is a 
+subclass of SystemWindow. I set it to create a window and inspect on initialisation. I had a 
+play around with changing values such as the bounds during runtime using inspectors. I then 
+added methods to change the bounds while also changing the window size, to change the position
+as well as changing the colour as the inbuilt change colour method did not work.
+
+27/10/2022
+I added a method which creates a button with an argument, and then when this button is clicked, 
+it will change the window's label to the given argument during runtime. My original aim was to
+have this button be created within the running window, however although the addMorph message
+adds the button to the window, as shown via the use of the inspector, it will not display the
+button. I think this is to do with the message being run at runtime. I therefore opened the
+button in a seperate window and it works. 
+
+30/10/2022
+I tested the reflective window class, using both the methods I have written and the inherited
+methods at runtime. I also retroactively added return statements into the ordering system
+class when a customer, order, product or retailer is added, so that these can be called back
+giving the user a choice of saving each object into a variable to use later or to use the 
+output methods to find the id of each object.  
+
+01/11/2022
+I began work on the Java proof-of-concept program, writing the animal classes and a zoo class
+which contains lists or 'enclosures' for each type of animal. Each animal implements a generic
+interface which specifies basic getters and setters for shared fields. I will add the 
+reflective elements of the program, allowing for the examining and changing of values, as well
+as adding new objects during runtime.  
+
+03/11/2022
+I edited the constructors of the lion, monkey and elephant objects to use setters properly. I
+also began work on the ReflectiveZoo class by reading through the textbook and implmenting the 
+methods getFields and printFields which will allow me to examine the fields and their values
+of an object. I also set the monkey object to be accessible, which will allow me to edit its
+values at runtime by disabling all runtime access checks on uses of the metaobject. 
+
+06/11/2022
+I chose to split up my report on OOP and reflectivity into two reports, one on both topics. I
+planned these reports using my own ideas and advice from my supervisor.
+
+08/11/2022
+I began work on the first report on OOP, detailing the paradigm and how Smalltalk implements it.
+
+09/11/2022
+I continued work on the OOP report, finishing the draft of the first Smalltalk section. 
+I added methods to the reflectiveZoo class which remove accessibility from selected fields and
+get the values of a given object reflectively. I also began the implementation of a command line
+interface so that I can perform reflective actions during runtime. Finally, I edited the methods
+to fetch animals from the respective enclosures correctly. 
+
+11/11/2022
+I continued work on the OOP report, detailing C++ and how it implements OOP from the C model.
+
+12/11/2022
+Continued work on the OOP report, talking about how C# implemented the OOP paradigm and compared
+this implementation to C++.
+
+13/11/2022
+I finished the first draft of the OOP report, finishing with a discussion of generics in Java vs
+C++, and a conclusion. 
+
+16/11/2022
+I added methods to the ReflectiveZoo class which add an animal reflectively by locating their 
+constructor and setting the values. I also changed the main function to allow viewing of fields
+reflectively, by printing them on the screen, and to reflectively change certain fields during
+runtime. This will be very useful for my final implementation as these are exactly the operations 
+I will need to carry out when editing objects during runtime in the 3D CAD language. I also
+'prettied' up my OOP report. Finally, I switched out my if statements for case statements in the
+command line interface. 
+
+18/11/2022
+I finished the second draft of the OOP report, adding how I intend on using OOP in the final
+implementation of the CAD language. I also began work on the reflective report. I changed
+the ReflectiveZoo class to reflectively call the setter methods when adding an animal. I 
+intentionally used a different way of calling a method reflectively, that is directly, compared
+to when the fields of an animal are got and then set to a new value reflectively.
+
+19/11/2022
+I continued the reflective report, talking about core concepts of reflection. I also began on
+an implementation of classes using eSOS. During this implementation, I considered my final
+implementation and I decided to implement a limited form of classes, where each defined class
+will be a subclass of a shape3D class, holding specific values to make a specific shape. Instances
+of this defined class will be able to be produced which can be individualised further. However,
+these subclasses will not be able to have user-defined methods added as all methods needed will
+be provided by the shape3D superclass. 
+
+20/11/2022
+I furthered my reflection report, discussing the implementation of the paradigm. I also continued
+on implementing classes in my plugin, deciding on an implmentation where the subclass will be 
+intialised, taking three parameters which will then update the class variables, so that the class
+has some fields that are set when instances are created. This will follow the implementation of 
+the CAD software, which will create shape subclasses with class variables of the size of the shape
+for example. 
+
+21/11/2022
+I expanded my reflection report, talking about inspectors within Smalltalk. I continued the classes
+implementation, adding functionality to create an object and to print an object's values to a text file, 
+to check outputs. While testing, I found an error where the classes' class variables are updated each 
+time a subclass is created, rather than the subclasses' class variables.
+
+23/11/2022
+I continued with the Classes implementation, and began utilising the library Javassist to create classes
+and set the Vehicle class as a superclass. I managed to create and assign classes correctly. However,
+my implementation requires the inheritance of the methods of the superclass, and I intended on having 
+certain class variables that would translate to class variables for the shapes in the final implementation, 
+such as bounds of a shape. After extensive testing and numerous different implementations, I realised
+that static methods, required to be static to alter the static class variables, cannot be inherited. I then
+came to the conclusion that my design is impossible to implement due to polymorphic behaviour not being
+achievable on static methods. Therefore, I redesigned my final implementation to simply create objects 
+of the shape classes, as this is a more natural design, and classes are not needed within my CAD language,
+as all objects will be created from already existing JavaFx classes, namely Sphere, Cylinder, Cuboid or Mesh.
+However, this time was not wasted as I delved into classes and the theory, learning a lot, and the attempted
+implementation caused me to think deeply about my CAD language and the structures needed.
+
+25/11/2022
+I finished the first draft of my reflection report, discussing the three different types of reflective methods
+within Java.
+
+26/11/2022
+Began work on the interim report, creating the base structure and plan, as well as importing the two reports written.
+Also wrote the description of the Ordering System program, detailing its features, TDD and UML and its relation to
+the greater project.
+
+27/11/2022
+Continued work on the interim report, detailing the Reflective Window and Animal Zoo programs, their features and
+UML diagrams as well as their relation to the greater project. Also added the introduction.
+
+03/12/2022
+After the final meeting with my supervisor, I decided to revisit the implementation of classes as this would be a
+good structure to implement to utilise the OOP paradigm within my CAD language. I changed the implementation 
+to result in the creation of these class variables when the subclass is instantiated, rather than inheriting them
+from the superclass as a problem arose when changing them, as this would change every subclasses' class variables
+due to each subclass using the same variables from the superclass. To this end I also changed the Vehicle class to
+no longer contain these class variables, as they can be added when the subclass is created. Therefore a small language
+which allows the creation of limited subclasses, where the only difference between these subclasses is the value of these
+class variables, was created. So far the plugin and the attribute grammar interpreter work and therefore eSOS and the
+syntax handler must be finished. 
+
+04/12/2022
+Created presentation detailing the project and the concepts of object-orientated and reflective programming.
+
+06/12/2022
+Finished the implementation of classes, adding eSOS rules and cases to the external to internal syntax. 
+
+07/12/2022
+Finished draft of the interim report.
+
+16/01/2023
+Set up the file structure of UKCAD, copied files across from 3rd year project and set up batch files to correctly link to
+the art files. I tried experimenting with the creation of a maven project, but due to the nature of this project, being 
+ran by batch files and using ART and eSOS tools, the maven project had huge issues with the existence of ART tools such as 
+'ARTException'. Therefore, I have chosen to use my own file structure and to inline the libraries I will be using in the batch
+files. For JUnit testing, I will create another batch file which will inline the library and run all the test files.
+
+18/01/2023
+I changed the language to use the variable name as the handle for each shape, and passed this variable name straight using either
+the attribute grammar or the external to interal syntax, removing the hashmaps for shapes in each. This is because the former implementation
+of using a numeric value as a handle and having a different hashmap in both the plugin and the syntax was needlessly complex and caused
+some issues with the interal to external syntax. The variable is by definition unique and therefore will work as a handle. I also began
+on the implementation of negative numbers in the external to internal syntax.
+
+19/01/2023
+I added functionality to toggle the axes using the key 'F'. I also continued to attempt to write an eSOS rule for negative numbers using 
+the subtract rule, but it is not working yet.  
+
+23/01/2023
+I added the ability to create pyramids using TriangleMesh and MeshView classes. This object takes three arguments, height, width
+and depth and can be transformed like the other three shapes. Rules for the external to internal syntax and the attribute 
+grammar have been added.
+
+24/01/2023
+I began to implement classes using the library Javassist in much the same way as the in Garage language. The design of these classes
+will be limited subclasses of the classes Sphere, Box, Cylinder and MeshView, and will contain class variables allowing for 
+instantiation of shapes with these properties. 
+
+26/01/2023
+I continued the implementation of classes, deciding upon an approach of a subClass specifying a transform (method) and values
+to go along with the transform, and saving this as a static field or class variable, which can then be read when an object 
+of this subClass is instantiated and this transformation applied to that object. This will provide a function for subClasses
+to perform, i.e to perform a transformation upon many shapes without having to individually perform it on each shape, utilising the 
+reflective code I have written. I also plan on adding a method to allow for more than one transformation to be added to each subClass.
+
+27/01/2023
+Classes have been implemented allowing for the production of instances with a specified transformation applied. External to internal
+syntax and eSOS rules have been written allowing for either method of running a program using subclasses. Each transformation has been tried
+and successfully works. This transformation is ran by reflectively invoking the specified transformation method in the plugin, using array
+comprehension to build an array of Values from the args recieved for the object and the Value[] field added to the subclass to be passed
+to the relevant transform method. At the moment, the TriangleMesh shapes are not featured as their method of instantiation is 
+more complicated. 
+
+28/01/2023
+I have began the addTransform method, allowing for multiple transforms to be applied upon object instantiation through the creation
+of another Value[] field, one for each transform and containing the arguments to be applied. I ran into an issue whereby due to the
+class being defined in the subClass method, trying to edit and load this class again results in Java attempting to load the class
+with the same name, which is not possible. A solution I will try is to instead to save the class as a CtClass in the hashmap, rather 
+than loading it and then saving it. This will allow me to edit this class to add another transform as it has not been loaded, and then
+to load upon object creation. 
+
+29/01/2023
+I finished the addTransform method, allowing for multiple transformations to be applied per class. This was achieved via creating two
+new hashmaps, whereby each class would be left as a CtClass and added to a hashmap, which can then be retrieved and a new field
+(transform) can be added. This bypasses the error of only being able to load the class once, as a class is now loaded upon the first
+instantiation of an object. I ran into another error where the field cannot be set as the needed Value[] through Javasssist; I therefore solved
+this by creating another hashmap which stores the Value[] for the field, and then upon loading the class, fetches the Value[] from 
+the hashmap and reflectively sets the field(s) object(s).
+
+30/01/2023
+I noticed a bug with the rotate method, which was written last year, whereby it would incorrectly calculate the centre point of the 
+shape using the bounds. I changed this to instead use the translate X,Y and Z values as the pivot point. I also added an argument to
+allow the specification of which axis to be rotated around. Finally, I added functionality to use the pyramid when creating a subclass,
+however due to TriangleMesh being unlike the defined shapes which have a set constructor as a mesh requires specific points and faces, 
+so the newObject function simply sets the values to be the same as when a pyramid is generated normally. Later on I will implement 
+a method to create more generic TriangleMeshes, and the subClass function will be changed accordingly. 
+
+31/01/2023
+I began the implementation of an editor into UKCAD, allowing for viewing and editing of a program. My original design was to have an 
+editor alongside the scene, but this was difficult to implement due to JavaFx only allowing the showing of one scene per stage
+at any time. Therefore, I decided on an implementation of a key (X) being used to swap to the editor scene, which displays the 
+code written in UKCAD_Interpreter.str and features two buttons; one to switch back to the scene and one to save and run the changed
+program. At the moment, the save and run button saves the changed program to the file and runs a new process in a seperate window 
+through running the batch file. This will be changed to run the new program within the same window. 
+
+01/02/2023
+I added a button to allow for the importing of a program file to the editor, which can then be saved to the main program file
+(UKCAD_Interpreter.str) and ran. I also added a button to export the code in the TextArea object to either a new or existing file. 
+I plan on adding the ability to save the changed code to the original file as well as UKCAD_Interpreter.str when ran. 
+
+04/02/2023
+I added the ability to save the changed code to the original file via saving the file as a variable and then upon the save & run
+button being clicked, it will attempt to write the text in the codeArea to the file. Upon calling the write method, it will check
+if the file exists or not. I also added a label to display which file has been opened which will update upon selecting a file. Finally,
+I changed the editor to instead be present alongside the 3D scene rather than the X key having to be pressed to swap over to the editor. 
+This was done through the use of subscenes, whereby the 3D scene and the editor are subscenes and part of a root group, which is added to
+a main scene. This means that the user no long has to switch between them and has the editor at the side, following my original design.
+
+05/02/2023
+I added a new batch file (reparsefx.bat) that only contains the command to run the classfile of the plugin with the input program file. 
+This reduces the time taken upon running a program as now the parser and lexer do not have to be generated each time a program is reran
+within the editor. I also added functionality to save the file path of the opened file within a .txt file, which can then be read and 
+the currFile variable set so that upon running the new program with the editor, it will save where this file is so that it does not need
+to be opened again to save the file upon running. 
+
+07/02/2023
+I went through much of my code, finding inefficiencies and changing them, such as the repeated use of string addition, which I have replaced
+with the concat method. I also added the ability to display a label, showing the name and the coordinates of a shape. At the moment, the 
+implementation is through a key press, which displays the labels for all shapes. This will be changed to when the specific shape is clicked,
+meaning only one label can be shown at any one time. 
+
+08/02/2023
+I edited the label for shapes to now display upon the clicking of a shape, where only one label can be shown at any one time. This label 
+will rotate to the angle of the camera and can be rotated again by clicking on the shape at a different angle. These labels will help the user
+to see which objects are which and where they are located.
+
+09/02/2023 
+I added an expand window button, which upon being clicked will hide the editor subscene and set the 3D scene to be the dimensions of the display.
+The stage will then be fullscreened. The escape key can be used to exit fullscreen, which will reverse the actions taken. This feature was
+implemented for the user, as the language's purpose is to model shapes, and therefore to be able to see the shapes in fullscreen is a useful
+option. 
+
+10/02/2023
+I changed the labels for the shapes to now hide the label if the same shape is clicked again, after it has been clicked to display 
+its label. This adds the ability for the user to view the label and then hide it. I also added the ability to be able to zoom in and 
+out of the 3D scene, using the mousewheel. This was implemented through translating the camera along the z axis in the direction that
+has been scrolled along the y axis, i.e forward or backward. Finally, I added a new transform: opacity.
+
+11/02/2023
+I added the ability for float numbers to be used within a program. I also added a new operation, allowing for the creation of many 
+shapes at once. This is performed using the subClasses, whereby a subClass is created, and then a variable number of objects can
+be created, which are assigned using the given ID concatenated with a numeric value. This newObjects method calls the newObject method
+x amount of times, passing its arguments with the object ID value changed to be the ID + numeric value. To this end, I also created rules for 
+a subClass with no arguments, i.e no transforms to be applied, therefore allowing for the creation of many basic shapes. Finally, I noticed
+a bug where if two subClasses had the same transform to be applied, the second would overwrite the first. This was caused by the fieldVals 
+hashmap using the name of the transform as a key, which would be overwritten to the last subClass with that transform. I therefore changed the
+hashmap to now use the subClass name concatenated with the transform name as a key.
+
+13/02/2023
+I added a new transform, allowing for sets of objects, denoted with [name] and created using the newObjects method, to be translated
+using a starting point and step value for each coordinate. Within the plugin, it will search the hashmap for all shapes with name "name" + i,
+where i is a numeric value, and apply the relevant translation. This will allow the user to create a line of objects easily, without having to
+translate each shape. I also began to implement a new shape, a triangular prism, using triangleMesh. At the moment it is missing some triangles,
+but I have drawn out each face and point on paper and will implement the shape correctly. 
+
+14/02/2023
+I added a new shape: a triangular prism. This shape is specified by x,y,z arguments and is created using the triangleMesh class. I had a problem
+with my initial faces as I did not realise that the order of points for a face is significant, determining which way it is facing and therefore
+resulted in a shape with gaps. However I correctly drew out my faces and implemented the shape. I also changed the subClass method to 
+accomodate the new prism, where if a shape using triangleMesh is used to create a subClass, a new class is created, at the moment either
+Pyramid or TriangularPrism, which has the superclass MeshView and itself is used to be a superclass to the created class. This implementation
+was used as upon the creation of an object, the MeshView constructor cannot be simply called like Sphere, Box and Cylinder as it must take
+a list of points and faces. Therefore, the method for creating the respective shape will be called reflectively, passing the correct arguments
+to create the shape desired. This implementation allows me to easily implement more triangleMesh shapes and use them as subClasses.
+
+15/02/2023
+I added texture coordinates to both pyramid and triprism shapes; now they will be able to display a texture correctly.
+
+17/02/2023
+I added two new shapes: cone and tetrahedron. I found a library to create complex shapes in JavaFx and I used some of the source code, changing
+it to fit my plugin and adding the correct texture coordinates. I also added cases for cone and tetrahedron shapes being used as subClasses. 
+Finally, I changed the attribute grammar to now take float values as well as integer values for all rules.
+
+18/02/2023
+I changed the tetrahedron shape to now take x,y,z as arguments. I did this as the implementation that I took from the library produced a tetrahedron
+that was not facing the correct way, so rather than rotate it I traced out points and faces and implemented my own. I also added two buttons to view
+the specification and signatures from the editor, as this will help the user to use the language while producing a program as they can lookup how
+to perform a certain operation. While doing this, I changed the editor to now use a GridPane wrapped in a VBox so that I can position nodes more
+precisely. 
+
+21/02/2023
+I added a new shape: a trapezium prism. This shape takes x,y,z arguments. At the moment there is a graphical bug to with two faces. I believe this is
+a result of an incorrectly assigned face, which will be fixed. I also continued my final report, by expanding the introduction of my interim report. 
+
+22/02/2023
+I fixed the issue with TrapPrism, the issue was two points were incorrectly assigned to -bx when they should have been bx. I also changed TrapPrism to
+now take the arguments bx, tx, y, z; where bx and tx are the bottom and top x values on the trapezium. 
+
+23/02/2023
+I changed the batch files so that now class files of both the plugin and the generated parser and lexer are compiled into the "classes" folder and ran
+correctly. This cleans up the main directory. I also added a section in my final report on analysing existing 3D CAD softwares and languages, and began to write about the UKCAD language. 
+
+27/02/2023
+I implemented a different method of applying transforms to classes. Before, a subClass would be defined and then the transform held in the fieldVals
+hashmap, when upon instantiation, the field would be set to the corresponding value in the hashmap. This implementation consisted of using a field
+to store the Value array which would be read upon creation. This made little sense as it required the use of an addition hashmap and did not really
+use the class to instantiate the object in the case of triangle mesh shapes. Also, the fieldVals hashmap used a concatenation of the class name 
+and transform name to store the values, meaning more than one transformation of the same type could not be applied to the class. This is now changed
+to run the corresponding method for transformation in the custom subClass's constructor. Each subClass is now a part of the package main, which allows
+it to take the method from the plugin. Each transform method has now been changed to take the shape as an argument, so that the subClasses can call
+'this' as the shape argument. This solves many issues with the program, such as now the transformation is applied once in the constructor rather than
+having to search the fields each time an object is created. Each triangle mesh shape now returns the mesh object, which is used for the subClass which 
+takes a mesh object, due to the subClass inheriting from the MeshView class.
+
+01/03/2023
+I found and fixed errors to do with the new method of adding a transform to a subClass's constructor. This was mainly due to inserting 
+code using Javassist, as code needs to be inserted as one block to be able to reference objects created within that block. Inserting code
+in multiple stages and attempting to reference an object previously created will not work. Therefore, I chose to use a hashmap to store
+the code to be inserted and append to it each time a transform is added. Then, upon first-time object instantiation, the relevant code will be inserted into the constructor, which will call the methods needed to provide the transform. 
+
+08/03/2023
+I added a new transform: rotateAll, which can be used upon sets of objects much like translateAll. This method takes a starting 
+angle, a step angle and an axis to rotate around. Then it will rotate each object adding the step angle to the start angle i-1 times,
+where i is the index of the shape. This allows users to, for example, create a hollow box out of four cuboids via rotating each cuboid
+90 degrees further, creating a hollow box shape. 
+
+09/03/2023
+I continued to write about UKCAD in the final report, detailing the attribute grammar and external-to-internal syntax.
+
+13/03/2023
+I added a new batch file: UKCAD.bat that will run the direct attribute grammar parser, so the user can just click to run UKCAD without
+needing to use any commands. I also tidied up the batch files so that now they use environment variables rather than the raw path
+to the files, so that UKCAD can be ported over to another system more easily; only the environment variables need to be changed. Finally, 
+I fixed an error so that the external-to-internal syntax now looks for the class files in the classes folder. 
+
+14/03/2023
+I discovered an error whereby the external-to-internal syntax would not pass a string value correctly. Instead of setting the inner
+value of the Value object to the string, it would set the object name to the string. Therefore, I added a method in the plugin to
+look for if the type starts with an underscore character, and then either return the inner value or the object name. 
+
+16/03/2023
+I continued writing my final report, finishing the section on the overview of the architecture and features of UKCAD. I also
+moved the section of code that sets up the camera into its own method, and I noticed a bug whereby if a MeshView class
+was used to create a subClass twice, the custom superclass will be created twice, which cannot be performed. Therefore,
+I added an if statement to check if this superclass already exists, and to not create it if it does. I added a new button
+to the editor, which will allow for the user to view the controls for the 3D scene. Finally, I added the lexical item
+REAL to the external-to-internal syntax, allowing for the use of decimal values. 
+
+19/03/2023
+I changed the UKCAD.bat file to now reparsefx.bat instead of parsefx.bat, as parsefx.bat creates the parser and lexer files, which
+if the grammar or syntax for the language have not been changed, is not needed and is therefore slowing UKCAD down. Therefore, 
+reparsefx.bat, the file used to rerun a program, simply runs the new .str file which the plugin class file. I also added the sections
+in the final report on the design decisions of UKCAD. 
+
+20/03/2023
+I added the sections on professional issues and critical analysis of the project to the project report.
+
+21/03/2023
+I added JavaDoc comments to the plugin and test classes, added the project structure to ReadMe.txt and updated the signatures, controls
+and specification.
+
+22/03/2023
+I found and fixed two errors with the external-to-internal syntax, being the passing of the url for the texture transform, and the
+passing of negative numbers. This was done via using the &STRING_DQ structure and adding eSOS rules. 
+
+23/03/2023
+I recorded and uploaded the demo video of UKCAD. I also finished the final draft of the report.

@@ -1,0 +1,101 @@
+digraph "RDT" {
+node[fontname=Helvetica fontsize=9 shape=box height = 0 width = 0 margin= 0.04]
+graph[ordering=out]
+edge[arrowsize = 0.3]
+
+"1"  [label="1: seq"]
+"1"->"2"
+"2"  [label="2: seq"]
+"2"->"3"
+"3"  [label="3: seq"]
+"3"->"4"
+"4"  [label="4: seq"]
+"4"->"5"
+"5"  [label="5: seq"]
+"5"->"6"
+"6"  [label="6: seq"]
+"6"->"7"
+"7"  [label="7: seq"]
+"7"->"8"
+"8"  [label="8: seq"]
+"8"->"9"
+"9"  [label="9: seq"]
+"9"->"10"
+"10"  [label="10: assign"]
+"10"->"11"
+"11"  [label="11: b"]
+"10"->"12"
+"12"  [label="12: 2"]
+"9"->"13"
+"13"  [label="13: subClass"]
+"13"->"14"
+"14"  [label="14: Car"]
+"13"->"15"
+"15"  [label="15: Vehicle"]
+"13"->"16"
+"16"  [label="16: 4"]
+"13"->"17"
+"17"  [label="17: 4"]
+"8"->"18"
+"18"  [label="18: subClass"]
+"18"->"19"
+"19"  [label="19: Van"]
+"18"->"20"
+"20"  [label="20: Vehicle"]
+"18"->"21"
+"21"  [label="21: 4"]
+"18"->"22"
+"22"  [label="22: 2"]
+"7"->"23"
+"23"  [label="23: subClass"]
+"23"->"24"
+"24"  [label="24: Lorry"]
+"23"->"25"
+"25"  [label="25: Vehicle"]
+"23"->"26"
+"26"  [label="26: 8"]
+"23"->"27"
+"27"  [label="27: 2"]
+"6"->"28"
+"28"  [label="28: object"]
+"28"->"29"
+"29"  [label="29: BlueFordFocus"]
+"28"->"30"
+"30"  [label="30: Car"]
+"28"->"31"
+"31"  [label="31: Ford_Focus"]
+"28"->"32"
+"32"  [label="32: blue"]
+"5"->"33"
+"33"  [label="33: printToFile"]
+"33"->"34"
+"34"  [label="34: BlueFordFocus"]
+"4"->"35"
+"35"  [label="35: object"]
+"35"->"36"
+"36"  [label="36: WhiteTransit"]
+"35"->"37"
+"37"  [label="37: Van"]
+"35"->"38"
+"38"  [label="38: Transit"]
+"35"->"39"
+"39"  [label="39: white"]
+"3"->"40"
+"40"  [label="40: printToFile"]
+"40"->"41"
+"41"  [label="41: WhiteTransit"]
+"2"->"42"
+"42"  [label="42: object"]
+"42"->"43"
+"43"  [label="43: RedLorry"]
+"42"->"44"
+"44"  [label="44: Lorry"]
+"42"->"45"
+"45"  [label="45: Red_Lorry"]
+"42"->"46"
+"46"  [label="46: red"]
+"1"->"47"
+"47"  [label="47: printToFile"]
+"47"->"48"
+"48"  [label="48: RedLorry"]
+}

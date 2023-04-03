@@ -1,0 +1,1 @@
+seq(seq(seq(seq(seq(seq(subClass(walls, Cuboid, Colour, Blue), objects(4, wall, walls, 100, 10, 100)), rotate(wall2, 90, Z)), translate(wall2, 50, 50, 0)), translate(wall3, 0, 100, 0)), rotate(wall4, 90, Z)), translate(wall4, neg(50), 50, 0))

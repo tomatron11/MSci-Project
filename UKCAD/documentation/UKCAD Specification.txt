@@ -1,0 +1,46 @@
+UKCAD Specification
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Programs
+- A UKCAD program is one or more statements, and must contain at least one statement to be ran
+- A statement is one of the signatures found in UKCAD Signatures
+- Multiple or no whitespace characters can be used where one can also be used
+- Programs can be ran using the direct attribute grammar or external-to-internal syntax
+- To use the direct attribute grammar, write the program in the code area within the editor and click "Save & Run"
+- To use the external-to-internal syntax, write the program in the file "UKCAD_Syntax.str", run the command "parse.bat UKCAD_Syntax +showAll", and then the batch file "ExtToESOS.bat"
+- Program files for use via the direct attribute grammar can be saved, exported and opened using the editor
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Backend Statement
+- UKCAD provides one DSL-type statement, backend, which takes 3 integer expressions
+- It then activates the corresponding method in the plugin via the _user() function in the ART value library
+- This is the only link between the eSOS interpreter and the Java plugin
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Shape Statements
+- Shapes can be created without a class via the "shapes" signatures
+- Shapes must be given an ID and the correct number of arguments provided
+- Arguments are real values, but also can be integer values
+- Arguments cannot be negative values
+- Multiple, one or no transforms can be applied to a shape
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Transform Statements
+- Transforms are operations that can be performed on a shape to manipulate it in some way
+- They are applied by adding ".transformName(args)" to a shape ID
+- Variable number and type of arguments can be given depending on transform
+- Objects from classes and shapes without defined classes can have transforms applied on them in the same way
+- Texture transform requires "" around the link to the texture
+- Opacity transform requires value between 0 and 1
+- Any time a transform takes a real value it can also take an integer value
+- Upon performing a rotate and translate transform on the same object, perform the rotate first
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Class Statements
+- subClasses are subclasses of JavaFx Shape3D classes and have one, multiple or no transforms applied to them
+- subClasses must take a capitalised name of an existing shape to inherit from (sphere -> Sphere) and must be given an ID themselves
+- Transforms added to subClasses must be capitalised and given a first argument (isFilled -> IsFilled)
+- Can take variable number and type of arguments after transform name in the same way as applying the transform to a shape
+- Transforms can be added to a subClass after the definition via ".addTransform()" which applies a transform in the same way as a subClass definition
+- subClass can be instantiated to one object, which must be given an ID
+- subClass can be instantiated to many objects, called a "set", which is denoted by "[_ID]", where each shape is named "_ID_n" and _n is an integer value
+- "sets" of objects may be transformed using "translateAll" or "rotateAll"
+- "translateAll" and "rotateAll" cannot be added to a subClass as a transform
+- Individual objects in a set may be transformed in the same way as other shapes
+- Once a subClass has been instantiated, it cannot be modified
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

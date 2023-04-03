@@ -1,0 +1,93 @@
+(* relation '->' *)
+(* constructor colour *)
+-colour  --- colour(_s, _c), _sig -> __user("colour", _s, _c), _sig
+(* constructor opacity *)
+-opacity  --- opacity(_s, _v), _sig -> __user("opacity", _s, _v), _sig
+(* constructor cylinder *)
+-cylinder  --- cylinder(_ID, _d, _h), _sig -> __user("cylinder", _ID, _d, _h), _sig
+(* constructor backend *)
+-backend  --- backend(_P1, _P2, _P3), _sig -> __user(_P1, _P2, _P3), _sig
+(* constructor pyramid *)
+-pyramid  --- pyramid(_ID, _w, _h, _d), _sig -> __user("pyramid", _ID, _w, _h, _d), _sig
+(* constructor translate *)
+-translate  --- translate(_a1, neg(_a2), neg(_a3), neg(_a4)), _sig -> __user("translate", _a1, __sub(0, _a2), __sub(0, _a3), __sub(0, _a4)), _sig
+-R1  --- translate(_a1, neg(_a2), _a3, neg(_a4)), _sig -> __user("translate", _a1, __sub(0, _a2), _a3, __sub(0, _a4)), _sig
+-R2  --- translate(_a1, _a2, neg(_a3), neg(_a4)), _sig -> __user("translate", _a1, _a2, __sub(0, _a3), __sub(0, _a4)), _sig
+-R3  --- translate(_a1, neg(_a2), neg(_a3), _a4), _sig -> __user("translate", _a1, __sub(0, _a2), __sub(0, _a3), _a4), _sig
+-R4  --- translate(_a1, neg(_a2), _a3, _a4), _sig -> __user("translate", _a1, __sub(0, _a2), _a3, _a4), _sig
+-R5  --- translate(_a1, _a2, neg(_a3), _a4), _sig -> __user("translate", _a1, _a2, __sub(0, _a3), _a4), _sig
+-R6  --- translate(_a1, _a2, _a3, neg(_a4)), _sig -> __user("translate", _a1, _a2, _a3, __sub(0, _a4)), _sig
+-R7  --- translate(_s, _x, _y, _z), _sig -> __user("translate", _s, _x, _y, _z), _sig
+(* constructor triprism *)
+-triprism  --- triprism(_ID, _w, _h, _d), _sig -> __user("triprism", _ID, _w, _h, _d), _sig
+(* constructor trapprism *)
+-trapprism  --- trapprism(_ID, _tw, _bw, _h, _d), _sig -> __user("triprism", _ID, _tw, _bw, _h, _d), _sig
+(* constructor translateAll *)
+-translateAll  --- translateAll(_g, neg(_x), _sx, _y, _sy, _z, _sz), _sig -> __user("translateAll", _g, __sub(0, _x), _sx, _y, _sy, _z, _sz), _sig
+-R8  --- translateAll(_g, _x, _sx, _y, _sy, _z, _sz), _sig -> __user("translateAll", _g, _x, _sx, _y, _sy, _z, _sz), _sig
+(* constructor cone *)
+-cone  --- cone(_ID, _d, _h), _sig -> __user("cone", _ID, _d, _h), _sig
+(* constructor tetra *)
+-tetra  --- tetra(_ID, _w, _h, _d), _sig -> __user("tetra", _ID, _w, _h, _d), _sig
+(* constructor subClass *)
+-subClass  --- subClass(_ID1, _ID2), _sig -> __user("subClass", _ID1, _ID2), _sig
+-subClass  --- subClass(_ID1, _ID2, _a1, neg(_a2)), _sig -> __user("subClass", _ID1, _ID2, _a1, __sub(0, _a2)), _sig
+-R9  --- subClass(_ID1, _ID2, _a1, _a2), _sig -> __user("subClass", _ID1, _ID2, _a1, _a2), _sig
+-subClass  --- subClass(_ID1, _ID2, _a1, neg(_a2), _a3), _sig -> __user("subClass", _ID1, _ID2, _a1, __sub(0, _a2), _a3), _sig
+-R10  --- subClass(_ID1, _ID2, _a1, _a2, _a3), _sig -> __user("subClass", _ID1, _ID2, _a1, _a2, _a3), _sig
+-subClass  --- subClass(_ID1, _ID2, _a1, neg(_a2), neg(_a3), neg(_a4)), _sig -> __user("subClass", _ID1, _ID2, _a1, __sub(0, _a2), __sub(0, _a3), __sub(0, _a4)), _sig
+-R11  --- subClass(_ID1, _ID2, _a1, neg(_a2), _a3, neg(_a4)), _sig -> __user("subClass", _ID1, _ID2, _a1, __sub(0, _a2), _a3, __sub(0, _a4)), _sig
+-R12  --- subClass(_ID1, _ID2, _a1, _a2, neg(_a3), neg(_a4)), _sig -> __user("subClass", _ID1, _ID2, _a1, _a2, __sub(0, _a3), __sub(0, _a4)), _sig
+-R13  --- subClass(_ID1, _ID2, _a1, neg(_a2), neg(_a3), _a4), _sig -> __user("subClass", _ID1, _ID2, _a1, __sub(0, _a2), __sub(0, _a3), _a4), _sig
+-R14  --- subClass(_ID1, _ID2, _a1, neg(_a2), _a3, _a4), _sig -> __user("subClass", _ID1, _ID2, _a1, __sub(0, _a2), _a3, _a4), _sig
+-R15  --- subClass(_ID1, _ID2, _a1, _a2, neg(_a3), _a4), _sig -> __user("subClass", _ID1, _ID2, _a1, _a2, __sub(0, _a3), _a4), _sig
+-R16  --- subClass(_ID1, _ID2, _a1, _a2, _a3, neg(_a4)), _sig -> __user("subClass", _ID1, _ID2, _a1, _a2, _a3, __sub(0, _a4)), _sig
+-R17  --- subClass(_ID1, _ID2, _a1, _a2, _a3, _a4), _sig -> __user("subClass", _ID1, _ID2, _a1, _a2, _a3, _a4), _sig
+(* constructor rotate *)
+-rotate  --- rotate(_s, neg(_a), _ax), _sig -> __user("rotate", _s, __sub(0, _a), _ax), _sig
+-R18  --- rotate(_s, _a, _ax), _sig -> __user("rotate", _s, _a, _ax), _sig
+(* constructor seq *)
+-sequenceDone  --- seq(__done, _C), _sig -> _C, _sig
+-sequence _C1, _sig -> _C1P, _sigP --- seq(_C1, _C2), _sig -> seq(_C1P, _C2), _sigP
+(* constructor rotateAll *)
+-rotateAll  --- rotateAll(_g, neg(_r), _sr, _a), _sig -> __user("rotateAll", _g, __sub(_r), _sr, _a)
+-R19  --- rotateAll(_g, _r, neg(_sr), _a), _sig -> __user("rotateAll", _g, _r, __sub(_sr), _a)
+-R20  --- rotateAll(_g, neg(_r), neg(_sr), _a), _sig -> __user("rotateAll", _g, __sub(_r), __sub(_sr), _a)
+-R21  --- rotateAll(_g, _r, _sr, _a), _sig -> __user("rotateAll", _g, _r, _sr, _a)
+(* constructor scale *)
+-scale  --- scale(_s, neg(_v)), _sig -> __user("scale", _s, __sub(0, _v)), _sig
+-R22  --- scale(_s, _v), _sig -> __user("scale", _s, _v), _sig
+(* constructor addTransform *)
+-addTransform  --- addTransform(_ID, _a1, neg(_a2)), _sig -> __user("addTransform", _ID, _a1, __sub(0, _a2)), _sig
+-R23  --- addTransform(_ID, _a1, _a2), _sig -> __user("addTransform", _ID, _a1, _a2), _sig
+-addTransform  --- addTransform(_ID, _a1, neg(_a2), _a3), _sig -> __user("addTransform", _ID, _a1, __sub(0, _a2), _a3), _sig
+-R24  --- addTransform(_ID, _a1, _a2, _a3), _sig -> __user("addTransform", _ID, _a1, _a2, _a3), _sig
+-addTransform  --- addTransform(_ID, _a1, neg(_a2), neg(_a3), neg(_a4)), _sig -> __user("addTransform", _ID, _a1, __sub(0, _a2), __sub(0, _a3), __sub(0, _a4)), _sig
+-R25  --- addTransform(_ID, _a1, neg(_a2), _a3, neg(_a4)), _sig -> __user("addTransform", _ID, _a1, __sub(0, _a2), _a3, __sub(0, _a4)), _sig
+-R26  --- addTransform(_ID, _a1, _a2, neg(_a3), neg(_a4)), _sig -> __user("addTransform", _ID, _a1, _a2, __sub(0, _a3), __sub(0, _a4)), _sig
+-R27  --- addTransform(_ID, _a1, neg(_a2), neg(_a3), _a4), _sig -> __user("addTransform", _ID, _a1, __sub(0, _a2), __sub(0, _a3), _a4), _sig
+-R28  --- addTransform(_ID, _a1, neg(_a2), _a3, _a4), _sig -> __user("addTransform", _ID, _a1, __sub(0, _a2), _a3, _a4), _sig
+-R29  --- addTransform(_ID, _a1, _a2, neg(_a3), _a4), _sig -> __user("addTransform", _ID, _a1, _a2, __sub(0, _a3), _a4), _sig
+-R30  --- addTransform(_ID, _a1, _a2, _a3, neg(_a4)), _sig -> __user("addTransform", _ID, _a1, _a2, _a3, __sub(0, _a4)), _sig
+-R31  --- addTransform(_ID, _a1, _a2, _a3, _a4), _sig -> __user("addTransform", _ID, _a1, _a2, _a3, _a4), _sig
+(* constructor sphere *)
+-sphere  --- sphere(_ID, _d), _sig -> __user("sphere", _ID, _d), _sig
+(* constructor isFilled *)
+-isFilled  --- isFilled(_s, _b), _sig -> __user("isFilled", _s, _b), _sig
+(* constructor object *)
+-object  --- object(_ID1, _ID2, _a1), _sig -> __user("object", _ID1, _ID2, _a1), _sig
+-object  --- object(_ID1, _ID2, _a1, _a2), _sig -> __user("object", _ID1, _ID2, _a1, _a2), _sig
+-object  --- object(_ID1, _ID2, _a1, _a2, _a3), _sig -> __user("object", _ID1, _ID2, _a1, _a2, _a3), _sig
+-object  --- object(_ID1, _ID2, _a1, _a2, _a3, _a4), _sig -> __user("object", _ID1, _ID2, _a1, _a2, _a3, _a4), _sig
+(* constructor objects *)
+-objects  --- objects(_n, _ID1, _ID2, _a1), _sig -> __user("objects", _n, _ID1, _ID2, _a1), _sig
+-objects  --- objects(_n, _ID1, _ID2, _a1, _a2), _sig -> __user("objects", _n, _ID1, _ID2, _a1, _a2), _sig
+-objects  --- objects(_n, _ID1, _ID2, _a1, _a2, _a3), _sig -> __user("objects", _n, _ID1, _ID2, _a1, _a2, _a3), _sig
+-objects  --- objects(_n, _ID1, _ID2, _a1, _a2, _a3, _a4), _sig -> __user("objects", _n, _ID1, _ID2, _a1, _a2, _a3, _a4), _sig
+(* constructor texture *)
+-texture  --- texture(_s, _l), _sig -> __user("texture", _s, _l), _sig
+(* constructor cuboid *)
+-cuboid  --- cuboid(_ID, _w, _h, _d), _sig -> __user("cuboid", _ID, _w, _h, _d), _sig
+
+(*-----------------------*)
+

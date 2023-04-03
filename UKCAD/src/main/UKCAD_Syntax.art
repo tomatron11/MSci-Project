@@ -1,0 +1,62 @@
+statement ::= seq^^ | backend^^ | shape^^ | transform^^ | class^^
+
+seq ::= statement statement
+backend ::= 'backend'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+
+subExpr ::= operand^^ | neg^^
+neg ::= '-'^ operand
+
+operand ::= &INTEGER^^ | &REAL^^
+
+shape ::= sphere^^ | cuboid^^ | cylinder^^ | pyramid^^ | triprism^^ | cone^^ | tetra^^ | trapprism^^
+sphere ::= ID '='^ 'sphere'^ '('^ subExpr ')'^
+cuboid ::= ID '='^ 'cuboid'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+cylinder ::= ID '='^ 'cylinder'^ '('^ subExpr ','^ subExpr ')'^
+pyramid ::= ID '='^ 'pyramid'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+triprism ::= ID '='^ 'triprism'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+cone ::= ID '='^ 'cone'^ '('^ subExpr ','^ subExpr ')'^
+tetra ::= ID '='^ 'tetra'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+trapprism ::= ID '='^ 'trapprism'^ '('^ subExpr ','^ subExpr ','^ subExpr ','^ subExpr ')'^
+
+class ::= subClass^^ | object^^ | addTransform^^ | objects^^
+subClass ::= 'subClass'^ ID '='^ ID '('^ ')'^
+subClass ::= 'subClass'^ ID '='^ ID '('^ ID ','^ ID ')'^
+subClass ::= 'subClass'^ ID '='^ ID '('^ ID ','^ subExpr ','^ subExpr ','^ subExpr ')'^
+subClass ::= 'subClass'^ ID '='^ ID '('^ ID ','^ subExpr ')'^
+subClass ::= 'subClass'^ ID '='^ ID '('^ ID ','^ &STRING_DQ ')'^
+subClass ::= 'subClass'^ ID '='^ ID '('^ ID ','^ subExpr ','^ ID ')'^
+addTransform ::= ID '.addTransform'^ '('^ ID ','^ ID ')'^
+addTransform ::= ID '.addTransform'^ '('^ ID ','^ subExpr ','^ subExpr ','^ subExpr ')'^
+addTransform ::= ID '.addTransform'^ '('^ ID ','^ subExpr ')'^
+addTransform ::= ID '.addTransform'^ '('^ ID ','^ &STRING_DQ ')'^
+addTransform ::= ID '.addTransform'^ '('^ ID ','^ subExpr ','^ ID ')'^
+object ::= 'object'^ ID '='^ ID '('^ subExpr ')'^
+object ::= 'object'^ ID '='^ ID '('^ subExpr ','^ subExpr ')'^
+object ::= 'object'^ ID '='^ ID '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+objects ::= &INTEGER 'objects:'^ '['^ ID ']'^ '='^ ID '('^ subExpr ')'^
+objects ::= &INTEGER 'objects:'^ '['^ ID ']'^ '='^ ID '('^ subExpr ','^ subExpr ')'^
+objects ::= &INTEGER 'objects:'^ '['^ ID ']'^ '='^ ID '('^ subExpr ','^ subExpr ','^ subExpr ')'^
+
+transform ::= translate^^ | rotate^^ | scale^^ | colour^^ | isFilled^^ | texture^^ | opacity^^ | translateAll^^ | rotateAll^^
+translate ::= ID '.translate'^ '('^ subExpr ','^ subExpr ','^ subExpr ')'^ 
+rotate ::= ID '.rotate'^ '('^ subExpr ','^ ID ')'^
+scale ::= ID '.scale'^ '('^ subExpr ')'^ 
+colour ::= ID '.colour'^ '('^ ID ')'^
+isFilled ::= ID '.isFilled'^ '('^ ID ')'^
+texture ::= ID '.texture'^ '('^ &STRING_DQ ')'^
+opacity ::= ID '.opacity'^ '('^ subExpr ')'^
+translateAll ::= '['^ ID ']'^ '.translateAll'^ '('^ subExpr ','^ subExpr ','^ subExpr ','^ subExpr ','^ subExpr ','^ subExpr ')'^
+rotateAll ::= '['^ ID ']'^ '.rotateAll'^ '('^ subExpr ','^ subExpr ','^ ID ')'^
+
+(* lexical items below this line *)
+ID <leftExtent:int rightExtent:int lexeme:String v:String> ::= 
+  &ID^^ { ID.lexeme = artLexeme(ID.leftExtent, ID.rightExtent); 
+  ID.v = artLexemeAsID(ID.leftExtent, ID.rightExtent); }  
+
+INTEGER <leftExtent:int rightExtent:int lexeme:String v:int> ::= 
+  &INTEGER^^ { INTEGER.lexeme = artLexeme(INTEGER.leftExtent, INTEGER.rightExtent); 
+  INTEGER.v = artLexemeAsInteger(INTEGER.leftExtent, INTEGER.rightExtent); } 
+
+REAL <leftExtent:int rightExtent:int lexeme:String v:double> ::= 
+  &REAL^^ {REAL.lexeme = artLexeme(REAL.leftExtent, REAL.rightExtent); 
+  REAL.v = artLexemeAsReal(REAL.leftExtent, REAL.rightExtent); }  

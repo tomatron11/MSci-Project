@@ -1,0 +1,10 @@
+b = 2
+subClass Car = Vehicle(4, 4)
+subClass Van = Vehicle(4, 2)
+subClass Lorry = Vehicle(8, 2)
+object BlueFordFocus = Car("Ford_Focus", "blue")
+BlueFordFocus.printToFile
+object WhiteTransit = Van("Transit", "white")
+WhiteTransit.printToFile
+object RedLorry = Lorry("Red_Lorry", "red")
+RedLorry.printToFile

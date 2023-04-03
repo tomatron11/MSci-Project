@@ -1,0 +1,281 @@
+\documentclass[10pt,leqno]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathabx}
+\usepackage[a4paper, total={18cm, 27cm}]{geometry}
+\parindent 0pt
+\newcommand{\artVariable}[1]{\mbox{\em #1\/}}
+\newcommand{\artConstructor}[1]{\mbox{\sf #1}}
+\newcommand{\artCaseSensitiveLiteral}[1]{\mbox{\tt #1}}
+\newcommand{\artCaseInsensitiveLiteral}[1]{\mbox{\tt #1}}
+\newcommand{\artCharacterLiteral}[1]{\mbox{\tt #1}}
+\newcommand{\artSpecial}[1]{\mbox{\sf\em #1}}
+\newcommand{\artCatenation}{\ \ }
+\newcommand{\artType}[1]{: #1}
+\begin{document}
+\begin{equation}
+\tag*{[\artConstructor{\sf colour}]}\frac{}{\langle\, \artConstructor{\sf colour}(\artVariable{s}, \artVariable{c}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{colour}), \artVariable{s}, \artVariable{c}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf opacity}]}\frac{}{\langle\, \artConstructor{\sf opacity}(\artVariable{s}, \artVariable{v}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{opacity}), \artVariable{s}, \artVariable{v}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf cylinder}]}\frac{}{\langle\, \artConstructor{\sf cylinder}(\artVariable{ID}, \artVariable{d}, \artVariable{h}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{cylinder}), \artVariable{ID}, \artVariable{d}, \artVariable{h}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf backend}]}\frac{}{\langle\, \artConstructor{\sf backend}(\artVariable{P$_{1}$}, \artVariable{P$_{2}$}, \artVariable{P$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artVariable{P$_{1}$}, \artVariable{P$_{2}$}, \artVariable{P$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf pyramid}]}\frac{}{\langle\, \artConstructor{\sf pyramid}(\artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{pyramid}), \artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf translate}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R1}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R2}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R3}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R4}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R5}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R6}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R7}]}\frac{}{\langle\, \artConstructor{\sf translate}(\artVariable{s}, \artVariable{x}, \artVariable{y}, \artVariable{z}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translate}), \artVariable{s}, \artVariable{x}, \artVariable{y}, \artVariable{z}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf triprism}]}\frac{}{\langle\, \artConstructor{\sf triprism}(\artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{triprism}), \artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf trapprism}]}\frac{}{\langle\, \artConstructor{\sf trapprism}(\artVariable{ID}, \artVariable{tw}, \artVariable{bw}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{triprism}), \artVariable{ID}, \artVariable{tw}, \artVariable{bw}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf translateAll}]}\frac{}{\langle\, \artConstructor{\sf translateAll}(\artVariable{g}, \artConstructor{\sf neg}(\artVariable{x}), \artVariable{sx}, \artVariable{y}, \artVariable{sy}, \artVariable{z}, \artVariable{sz}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translateAll}), \artVariable{g}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{x}), \artVariable{sx}, \artVariable{y}, \artVariable{sy}, \artVariable{z}, \artVariable{sz}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R8}]}\frac{}{\langle\, \artConstructor{\sf translateAll}(\artVariable{g}, \artVariable{x}, \artVariable{sx}, \artVariable{y}, \artVariable{sy}, \artVariable{z}, \artVariable{sz}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{translateAll}), \artVariable{g}, \artVariable{x}, \artVariable{sx}, \artVariable{y}, \artVariable{sy}, \artVariable{z}, \artVariable{sz}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf cone}]}\frac{}{\langle\, \artConstructor{\sf cone}(\artVariable{ID}, \artVariable{d}, \artVariable{h}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{cone}), \artVariable{ID}, \artVariable{d}, \artVariable{h}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf tetra}]}\frac{}{\langle\, \artConstructor{\sf tetra}(\artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{tetra}), \artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf subClass}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf subClass}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R9}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf subClass}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R10}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf subClass}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R11}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R12}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R13}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R14}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R15}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R16}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R17}]}\frac{}{\langle\, \artConstructor{\sf subClass}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{subClass}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf rotate}]}\frac{}{\langle\, \artConstructor{\sf rotate}(\artVariable{s}, \artConstructor{\sf neg}(\artVariable{a}), \artVariable{ax}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{rotate}), \artVariable{s}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a}), \artVariable{ax}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R18}]}\frac{}{\langle\, \artConstructor{\sf rotate}(\artVariable{s}, \artVariable{a}, \artVariable{ax}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{rotate}), \artVariable{s}, \artVariable{a}, \artVariable{ax}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf sequenceDone}]}\frac{}{\langle\, \artConstructor{\sf seq}(\artSpecial{done}, \artVariable{C}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artVariable{C}, \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf sequence}]}\frac{\langle\, \artVariable{C$_{1}$}, \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artVariable{C$_{1}$\/$^\prime$}, \artVariable{$\sigma$\/$^\prime$}\,\rangle }{\langle\, \artConstructor{\sf seq}(\artVariable{C$_{1}$}, \artVariable{C$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artConstructor{\sf seq}(\artVariable{C$_{1}$\/$^\prime$}, \artVariable{C$_{2}$}), \artVariable{$\sigma$\/$^\prime$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf rotateAll}]}\frac{}{\langle\, \artConstructor{\sf rotateAll}(\artVariable{g}, \artConstructor{\sf neg}(\artVariable{r}), \artVariable{sr}, \artVariable{a}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{rotateAll}), \artVariable{g}, \artSpecial{sub}(\artVariable{r}), \artVariable{sr}, \artVariable{a})\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R19}]}\frac{}{\langle\, \artConstructor{\sf rotateAll}(\artVariable{g}, \artVariable{r}, \artConstructor{\sf neg}(\artVariable{sr}), \artVariable{a}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{rotateAll}), \artVariable{g}, \artVariable{r}, \artSpecial{sub}(\artVariable{sr}), \artVariable{a})\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R20}]}\frac{}{\langle\, \artConstructor{\sf rotateAll}(\artVariable{g}, \artConstructor{\sf neg}(\artVariable{r}), \artConstructor{\sf neg}(\artVariable{sr}), \artVariable{a}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{rotateAll}), \artVariable{g}, \artSpecial{sub}(\artVariable{r}), \artSpecial{sub}(\artVariable{sr}), \artVariable{a})\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R21}]}\frac{}{\langle\, \artConstructor{\sf rotateAll}(\artVariable{g}, \artVariable{r}, \artVariable{sr}, \artVariable{a}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{rotateAll}), \artVariable{g}, \artVariable{r}, \artVariable{sr}, \artVariable{a})\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf scale}]}\frac{}{\langle\, \artConstructor{\sf scale}(\artVariable{s}, \artConstructor{\sf neg}(\artVariable{v})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{scale}), \artVariable{s}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{v})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R22}]}\frac{}{\langle\, \artConstructor{\sf scale}(\artVariable{s}, \artVariable{v}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{scale}), \artVariable{s}, \artVariable{v}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf addTransform}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R23}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf addTransform}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R24}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf addTransform}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R25}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R26}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R27}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R28}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artConstructor{\sf neg}(\artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{2}$}), \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R29}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artConstructor{\sf neg}(\artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{3}$}), \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R30}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artConstructor{\sf neg}(\artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artSpecial{sub}(\artSpecial{int32}(0), \artVariable{a$_{4}$})), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf R31}]}\frac{}{\langle\, \artConstructor{\sf addTransform}(\artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{addTransform}), \artVariable{ID}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf sphere}]}\frac{}{\langle\, \artConstructor{\sf sphere}(\artVariable{ID}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{sphere}), \artVariable{ID}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf isFilled}]}\frac{}{\langle\, \artConstructor{\sf isFilled}(\artVariable{s}, \artVariable{b}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{isFilled}), \artVariable{s}, \artVariable{b}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf object}]}\frac{}{\langle\, \artConstructor{\sf object}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{object}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf object}]}\frac{}{\langle\, \artConstructor{\sf object}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{object}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf object}]}\frac{}{\langle\, \artConstructor{\sf object}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{object}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf object}]}\frac{}{\langle\, \artConstructor{\sf object}(\artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{object}), \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf objects}]}\frac{}{\langle\, \artConstructor{\sf objects}(\artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{objects}), \artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf objects}]}\frac{}{\langle\, \artConstructor{\sf objects}(\artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{objects}), \artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf objects}]}\frac{}{\langle\, \artConstructor{\sf objects}(\artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{objects}), \artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf objects}]}\frac{}{\langle\, \artConstructor{\sf objects}(\artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{objects}), \artVariable{n}, \artVariable{ID$_{1}$}, \artVariable{ID$_{2}$}, \artVariable{a$_{1}$}, \artVariable{a$_{2}$}, \artVariable{a$_{3}$}, \artVariable{a$_{4}$}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf texture}]}\frac{}{\langle\, \artConstructor{\sf texture}(\artVariable{s}, \artVariable{l}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{texture}), \artVariable{s}, \artVariable{l}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\begin{equation}
+\tag*{[\artConstructor{\sf cuboid}]}\frac{}{\langle\, \artConstructor{\sf cuboid}(\artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle \rightarrow \langle\, \artSpecial{user}(\artSpecial{string}(\artCaseInsensitiveLiteral{cuboid}), \artVariable{ID}, \artVariable{w}, \artVariable{h}, \artVariable{d}), \artVariable{$\sigma$}\,\rangle }
+\end{equation}
+
+\hrule
+\end{document}
